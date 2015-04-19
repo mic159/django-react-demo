@@ -1,0 +1,6 @@
+node_modules
+.idea
+*.egg-info
+/react_demo/app/static/js/
+*.log
+*.pyc

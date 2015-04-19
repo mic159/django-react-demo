@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "scripts": {
+    "react-service": "react-service --debug --watch",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
+  "dependencies": {
+    "react": "^0.13.0",
+    "webpack": "^1.6.0",
+    "jsx-loader": "^0.12.2",
+    "react-render-service": "^0.10.3"
+  }
+}
