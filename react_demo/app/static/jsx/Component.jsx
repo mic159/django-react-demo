@@ -1,32 +1,22 @@
-var React = require('react');
+import React from 'react'
 
-var Product = React.createClass({
-    render: function() {
-        return (
-            <div className="well well-sm">
-                <strong>{this.props.title}</strong>
-                <span style={{float:'right'}}>${this.props.price.toFixed(2)}</span>
-                <br/>
-                <span>{this.props.subtitle}</span>
-            </div>
-        );
-    }
-});
+const Product = ({title, subtitle, price}) => (
+    <div className="well well-sm">
+        <strong>{title}</strong>
+        <span style={{float:'right'}}>${price.toFixed(2)}</span>
+        <br/>
+        <span>{subtitle}</span>
+    </div>
+)
 
-var ProductList = React.createClass({
-    componentDidMount: function() {
-        console.log("Mounted!");
-    },
-    render: function() {
-        var list = this.props.products.map(function (product) {
-            return React.createElement(Product, product, null);
-        });
+class ProductList extends React.Component {
+    render() {
         return (
             <div>
-                {list}
+                {this.props.products.map((p, idx) => <Product key={idx} {...p} />)}
             </div>
-        );
+        )
     }
-});
+}
 
-module.exports = ProductList;
+export default ProductList

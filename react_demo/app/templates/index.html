@@ -18,11 +18,11 @@
         <!-- Insert the CommentBox's rendered markup -->
         <div id="content">{{ react_component }}</div>
     </div>
-    <script src="{% static 'js/client.js' %}"></script>
+    <!-- Make the props available to the client-side script -->
     <script>
-        (function() {
-            bundle({{ react_component.render_props }});
-        })();
-</script>
+        window.bootstrapData = {{ react_component.render_props }};
+    </script>
+    <!-- Now execute the client-side script -->
+    <script src="{% static 'js/bootstrap.js' %}"></script>
 </body>
 </html>

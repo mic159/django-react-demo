@@ -1,5 +1,7 @@
-from django.conf.urls import patterns, include, url
+from django.urls import path
+from react_demo.app import views
 
-urlpatterns = patterns('',
-    url(r'^', include('react_demo.app.urls')),
-)
+
+urlpatterns = [
+    path('', views.index),
+]

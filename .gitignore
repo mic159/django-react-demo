@@ -4,3 +4,6 @@ node_modules
 /react_demo/app/static/js/
 *.log
 *.pyc
+/.cache
+/.env
+/.vscode

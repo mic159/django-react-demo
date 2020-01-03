@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.forms.models import model_to_dict
-from react_render.render import render_component
+from react_render.django import render_component
 
 from react_demo.app.models import Product
 
@@ -21,7 +21,7 @@ def index(request):
 
     context = {
         # Render the CommentBox component down to HTML
-        'react_component': render_component('js/server.js', props),
+        'react_component': render_component('js/server/Component.js', props),
     }
 
     return render(request, 'index.html', context)

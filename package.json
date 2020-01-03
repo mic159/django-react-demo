@@ -2,13 +2,13 @@
   "private": true,
   "scripts": {
     "react-service": "react-service --debug --watch",
-    "build": "webpack",
-    "watch": "webpack --watch"
+    "build-client": "parcel build react_demo/app/static/jsx/bootstrap.js --out-dir react_demo/app/static/js/",
+    "build-server": "parcel build react_demo/app/static/jsx/Component.jsx --out-dir react_demo/app/static/js/server/ --target nodejs --no-minify"
   },
   "dependencies": {
-    "react": "^0.13.0",
-    "webpack": "^1.6.0",
-    "jsx-loader": "^0.12.2",
-    "react-render-service": "^0.10.3"
+    "parcel": "^1.12.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-render-service": "^1.3.0"
   }
 }

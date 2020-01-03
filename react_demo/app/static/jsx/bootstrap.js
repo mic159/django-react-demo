@@ -1,9 +1,9 @@
-var React = require('react');
-var Component = require('./Component.jsx');
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Component from './Component'
 
-module.exports = function(props) {
-    React.render(
-        React.createElement(Component, props, null),
-        document.getElementById('content')
-    );
-};
+
+ReactDOM.render(
+    <Component {...window.bootstrapData} />,
+    document.getElementById('content')
+)
