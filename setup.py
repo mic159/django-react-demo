@@ -5,7 +5,7 @@ setup(
     version='1.0.0',
     packages=find_packages(),
     install_requires=[
-        'Django==3.1.13',
+        'Django==3.1.14',
         'react-render-client==1.0.0'
     ],
     entry_points={
