@@ -2,13 +2,27 @@
   "private": true,
   "scripts": {
     "react-service": "react-service --debug --watch",
-    "build-client": "parcel build react_demo/app/static/jsx/bootstrap.js --out-dir react_demo/app/static/js/",
-    "build-server": "parcel build react_demo/app/static/jsx/Component.jsx --out-dir react_demo/app/static/js/server/ --target nodejs --no-minify"
+    "build-client": "parcel build react_demo/app/static/jsx/bootstrap.js --target client",
+    "build-server": "parcel build react_demo/app/static/jsx/Component.jsx --target server"
+  },
+  "targets": {
+    "server": {
+      "context": "node",
+      "includeNodeModules": true,
+      "distDir": "react_demo/app/static/js/server/"
+    },
+    "client": {
+      "context": "browser",
+      "distDir": "react_demo/app/static/js/"
+    }
+  },
+  "engines": {
+    "node": ">= 14"
   },
   "dependencies": {
-    "parcel": "^1.12.4",
+    "parcel": "^2.5.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-render-service": "^1.3.0"
+    "react-render-service": "^1.3.1"
   }
 }
